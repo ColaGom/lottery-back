@@ -2,26 +2,29 @@ package com.colagom.lottery.domain
 
 import org.springframework.data.annotation.CreatedDate
 import java.time.LocalDateTime
+import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
 
 @Entity
 class Lottery(
     @Id
-    val drwNo: Int,
-    val bnusNo: Int,
-    val drwNoDate: String,
-    val drwtNo1: Int,
-    val drwtNo2: Int,
-    val drwtNo3: Int,
-    val drwtNo4: Int,
-    val drwtNo5: Int,
-    val drwtNo6: Int,
-    val firstAccumamnt: Int,
-    val firstPrzwnerCo: Int,
-    val firstWinamnt: Long,
-    val returnValue: String,
-    val totSellamnt: Long,
+    var drwNo: Int = 0,
+    var bnusNo: Int = 0,
+    var drwNoDate: String = "",
+    var drwtNo1: Int = 0,
+    var drwtNo2: Int = 0,
+    var drwtNo3: Int = 0,
+    var drwtNo4: Int = 0,
+    var drwtNo5: Int = 0,
+    var drwtNo6: Int = 0,
+    var firstAccumamnt: Int = 0,
+    var firstPrzwnerCo: Int = 0,
+    var firstWinamnt: Long = 0L,
+    var returnValue: String = "",
+    var totSellamnt: Long = 0L
+) {
     @CreatedDate
-    val createdAt: LocalDateTime? = null
-)
+    @Column(insertable = false, updatable = false)
+    val createdAt = LocalDateTime.now()
+}
