@@ -27,3 +27,12 @@ jobs:
 
     - name: Build with Gradle
       run: gradle build
+      
+    - name: Upload S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_S3_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_S3_KEY }}
+      run: |
+        aws s3 cp \
+          --region ap-northeast-2 \
+          ./build/libs/*.jar s3://lottery-ci
