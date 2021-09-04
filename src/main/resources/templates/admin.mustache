@@ -1,10 +1,48 @@
 {{>layout/header}}
-<h1>Lottery Admin</h1>
-<div class="col-md-12">
-    <div class="row">
-        <div class="col-md-6">
-            <a href="" role="button" class="btn btn-primary">크롤링</a>
+<div class="container">
+    <h1>Lottery Admin</h1>
+    <div class="col-md-12">
+        <div class="row">
+            <a href="/extract" role="button" class="btn btn-primary float-end">lottery extract</a>
         </div>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+            <th scope="col">회차</th>
+            <th scope="col">1</th>
+            <th scope="col">2</th>
+            <th scope="col">3</th>
+            <th scope="col">4</th>
+            <th scope="col">5</th>
+            <th scope="col">6</th>
+            <th scope="col">bonus</th>
+            <th scope="col">1등총액</th>
+            <th scope="col">1등당첨자수</th>
+            <th scope="col">1등당첨액</th>
+            <th scope="col">판매금액</th>
+            <th scope="col">일자</th>
+            </thead>
+
+            <tbody id="tbody">
+            {{#lotteries}}
+            <tr>
+                <td>{{drwNo}}</td>
+                <td>{{drwtNo1}}</td>
+                <td>{{drwtNo2}}</td>
+                <td>{{drwtNo3}}</td>
+                <td>{{drwtNo4}}</td>
+                <td>{{drwtNo5}}</td>
+                <td>{{drwtNo6}}</td>
+                <td>{{bnusNo}}</td>
+                <td>{{firstAccumamnt}}</td>
+                <td>{{firstPrzwnerCo}}</td>
+                <td>{{firstWinamnt}}</td>
+                <td>{{totSellamnt}}</td>
+                <td>{{drwNoDate}}</td>
+            </tr>
+            {{/lotteries}}
+            </tbody>
+        </table>
     </div>
 </div>
 {{>layout/footer}}

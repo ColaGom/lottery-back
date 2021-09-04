@@ -1,8 +1,5 @@
 package com.colagom.lottery.domain
 
-import org.springframework.data.annotation.CreatedDate
-import java.time.LocalDateTime
-import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
 
@@ -18,13 +15,8 @@ class Lottery(
     var drwtNo4: Int = 0,
     var drwtNo5: Int = 0,
     var drwtNo6: Int = 0,
-    var firstAccumamnt: Int = 0,
-    var firstPrzwnerCo: Int = 0,
+    var firstAccumamnt: Long = 0,
+    var firstPrzwnerCo: Long = 0,
     var firstWinamnt: Long = 0L,
-    var returnValue: String = "",
     var totSellamnt: Long = 0L
-) {
-    @CreatedDate
-    @Column(insertable = false, updatable = false)
-    val createdAt = LocalDateTime.now()
-}
+) : BaseTimeEntity()

@@ -34,7 +34,6 @@ class LotteryService(
             firstAccumamnt = dto.firstAccumamnt
             firstPrzwnerCo = dto.firstPrzwnerCo
             firstWinamnt = dto.firstWinamnt
-            returnValue = dto.returnValue
             totSellamnt = dto.totSellamnt
         }
 
