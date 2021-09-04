@@ -22,11 +22,6 @@ class LotteryRepositoryTest {
         Random.nextInt(),
         Random.nextInt(),
         Random.nextInt(),
-        Random.nextInt(),
-        Random.nextInt(),
-        Random.nextLong(),
-        "return",
-        Random.nextLong()
     )
 
     @Autowired
