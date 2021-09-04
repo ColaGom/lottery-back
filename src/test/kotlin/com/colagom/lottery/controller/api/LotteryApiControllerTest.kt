@@ -41,7 +41,7 @@ class LotteryApiControllerTest {
 
         val url = "http://localhost:$port/api/lottery"
 
-        val response = restTemplate.postForEntity(url, dto, Int::class.java)
+        val response = restTemplate.postForEntity(url, dto, LotteryDto::class.java)
         assertThat(response.statusCode).isEqualTo(HttpStatus.OK)
 
         val first = lotteryRepository.findAll().first()
