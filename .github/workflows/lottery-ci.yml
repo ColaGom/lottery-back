@@ -37,5 +37,5 @@ jobs:
       run: |
         aws s3 cp \
           --region ap-northeast-2 \
-          ./build/libs/ s3://lottery-ci --exclude "*" --include "*.jar"
+          ./build/libs/lottery-0.0.1-SNAPSHOT.jar s3://lottery-ci
 
