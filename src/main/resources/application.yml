@@ -1,0 +1,33 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:mysql://localhost:3306/lottery?serverTimezone=UTC&characterEncoding=UTF-8
+    username: lottery
+    password: Lott$321
+
+---
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
