@@ -2,10 +2,6 @@
 <div class="container">
     <h1>Lottery Admin</h1>
     <div class="col-md-12">
-        <div class="row">
-            <a href="/extract" role="button" class="btn btn-primary float-end">lottery extract</a>
-        </div>
-        <br>
         <table class="table table-bordered">
             <thead>
             <th scope="col">회차</th>
@@ -25,21 +21,21 @@
 
             <tbody id="tbody">
             {{#lotteries}}
-            <tr>
-                <td>{{drwNo}}</td>
-                <td>{{drwtNo1}}</td>
-                <td>{{drwtNo2}}</td>
-                <td>{{drwtNo3}}</td>
-                <td>{{drwtNo4}}</td>
-                <td>{{drwtNo5}}</td>
-                <td>{{drwtNo6}}</td>
-                <td>{{bnusNo}}</td>
-                <td>{{firstAccumamnt}}</td>
-                <td>{{firstPrzwnerCo}}</td>
-                <td>{{firstWinamnt}}</td>
-                <td>{{totSellamnt}}</td>
-                <td>{{drwNoDate}}</td>
-            </tr>
+                <tr>
+                    <td>{{drwNo}}</td>
+                    <td>{{drwtNo1}}</td>
+                    <td>{{drwtNo2}}</td>
+                    <td>{{drwtNo3}}</td>
+                    <td>{{drwtNo4}}</td>
+                    <td>{{drwtNo5}}</td>
+                    <td>{{drwtNo6}}</td>
+                    <td>{{bnusNo}}</td>
+                    <td>{{firstAccumamnt}}</td>
+                    <td>{{firstPrzwnerCo}}</td>
+                    <td>{{firstWinamnt}}</td>
+                    <td>{{totSellamnt}}</td>
+                    <td>{{drwNoDate}}</td>
+                </tr>
             {{/lotteries}}
             </tbody>
         </table>
