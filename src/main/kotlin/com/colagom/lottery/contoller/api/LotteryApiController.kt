@@ -18,9 +18,7 @@ class LotteryApiController(
     private val restTemplate: RestTemplate
 ) {
     @GetMapping
-    fun get(
-        @RequestParam page: Int = 0,
-    ) = lotteryService.findAll(page)
+    fun get() = lotteryService.findAll()
 
     @PostMapping
     fun post(
