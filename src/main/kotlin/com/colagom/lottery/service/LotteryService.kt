@@ -3,6 +3,7 @@ package com.colagom.lottery.service
 import com.colagom.lottery.core.toggleModel
 import com.colagom.lottery.domain.LotteryRepository
 import com.colagom.lottery.dto.LotteryDto
+import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -11,7 +12,7 @@ class LotteryService(
     private val repository: LotteryRepository
 ) {
     @Transactional
-    fun findAll() = repository.findAll()
+    fun findAll(page: Int = 0) = repository.findAll(PageRequest.of(page, 50))
 
     @Transactional
     fun save(dto: LotteryDto): LotteryDto = repository.save(dto.toggleModel()).let(LotteryDto::of)
