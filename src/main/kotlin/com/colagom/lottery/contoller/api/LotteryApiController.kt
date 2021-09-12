@@ -1,5 +1,7 @@
 package com.colagom.lottery.contoller.api
 
+import com.colagom.lottery.domain.LotteryResponse
+import com.colagom.lottery.domain.Pagination
 import com.colagom.lottery.dto.LotteryDto
 import com.colagom.lottery.service.LotteryService
 import org.springframework.http.ResponseEntity
@@ -8,6 +10,7 @@ import org.springframework.validation.FieldError
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.client.RestTemplate
+import javax.validation.constraints.Min
 import javax.validation.constraints.Size
 
 @RestController
@@ -18,7 +21,21 @@ class LotteryApiController(
     private val restTemplate: RestTemplate
 ) {
     @GetMapping
-    fun get() = lotteryService.findAll()
+    fun get(
+        @Min(value = 1, message = "page must be greater than 1")
+        @RequestParam page: Int = 1
+    ): ResponseEntity<LotteryResponse> {
+        val pageItem = lotteryService.findAll(page)
+
+        return ResponseEntity.ok(
+            LotteryResponse(
+                items = pageItem.content,
+                _paging = Pagination(
+                    pageItem.hasNext()
+                )
+            )
+        )
+    }
 
     @PostMapping
     fun post(
