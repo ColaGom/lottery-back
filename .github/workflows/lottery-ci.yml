@@ -9,7 +9,7 @@ env:
   S3_BUCKET_NAME: lottery-ci
 
 jobs:
-  build:
+  lottery-ci:
 
     runs-on: ubuntu-latest
     

@@ -19,7 +19,7 @@ class LotteryApiController(
 ) {
     @GetMapping
     fun get(
-        @RequestParam page: Int,
+        @RequestParam page: Int = 0,
     ) = lotteryService.findAll(page)
 
     @PostMapping
